@@ -1,0 +1,121 @@
+ <loop label="LoopREGARDMEANINGUNIQUE" vars="BrandName,BrandLogo">
+    <title>bc_BRANDEVALUATION_REGARDMEANINGUNIQUE</title>
+    <block label="blockREGARDMEANINGUNIQUE" builder:title="default REGARDMEANINGUNIQUE block">
+      <radio 
+     label="bc_BRANDEVALUATION_REGARDMEANINGUNIQUE_[loopvar: label]"
+     atmtable:btn_css="font-size:12px; border-radius: 10px; border: 0px solid #888;"
+     atmtable:btn_selected_css="border-color: #f80 !important"
+     atmtable:col_legend_css="display:none"
+     atmtable:row_dividers="1"
+     atmtable:row_legend_css="font-weight: normal; background-color:#fff !important; border-color: #fff !important;"
+     randomize="0"
+     uses="atmtable.6">
+        <title><div style="text-align:center">[loopvar: BrandLogo]<br />[loopvar: BrandName]</div><br /><br /><span class="instruction-text">Select one in each row.</span></title>
+        <style label="mobilegridjs" name="question.after" wrap="ready"><![CDATA[
+var device = ${hDevicetype.val}
+
+//Display Scale Labels basing on the row.
+jQuery(".labelrxcx").css("display","none")
+jQuery(".labelr1").parent().parent().find(".labelr1c1,.labelr1c7").css("display","")
+jQuery(".labelr2").parent().parent().find(".labelr2c1,.labelr2c7").css("display","")
+jQuery(".labelr3").parent().parent().find(".labelr3c1,.labelr3c7").css("display","")	
+
+
+if (device==1) 
+{
+	
+	//Restructure row label from let to top 	
+	jQuery(".answers td").css("width","")
+	jQuery(".labelr1").parent().parent().before("<tr><td class='labelr1tr' colspan=7></td></tr>")
+	jQuery(".labelr1tr").append(jQuery(".labelr1"))
+	jQuery(".labelr2").parent().parent().before("<tr><td class='labelr2tr' colspan=7></td></tr>")
+	jQuery(".labelr2tr").append(jQuery(".labelr2"))
+	jQuery(".labelr3").parent().parent().before("<tr><td class='labelr3tr' colspan=7></td></tr>")
+	jQuery(".labelr3tr").append(jQuery(".labelr3"))	
+}
+
+if (device == 0)
+{
+
+    jQuery(".grid").removeClass("grid-table-mode");
+    jQuery(".sq-atmtable-btn,.row-legend").addClass("widthfull");
+    jQuery(".sq-atmtable-btn,.row-legend").css("margin","5px");
+    jQuery(".sq-atmtable-btn label").css("display","block");
+    jQuery("tr").removeClass("odd");      
+}
+]]></style>
+        <row label="r1"><span class="labelr1" style="white-space:nowrap">How highly you<strong> regard</strong> it</span></row>
+        <row label="r2"><span class="labelr2" style="white-space:nowrap">How <strong>meaningful</strong> it is</span></row>
+        <row label="r3"><span class="labelr3" style="white-space:nowrap">How <strong>unique</strong> it is</span></row>
+        <col label="c1">1<br /><span class="labelrxcx labelr1c1">extremely low regard</span><span class="labelrxcx labelr2c1">not at all meaningful</span><span class="labelrxcx labelr3c1">not at all different or unique</span></col>
+        <col label="c2">2</col>
+        <col label="c3">3</col>
+        <col label="c4">4</col>
+        <col label="c5">5</col>
+        <col label="c6">6</col>
+        <col label="c7">7<br /><span class="labelrxcx labelr1c7">extremely high regard</span><span class="labelrxcx labelr2c7">extremely meaningful</span><span class="labelrxcx labelr3c7">extremely different or unique</span></col>
+      </radio>
+    </block>
+
+    <looprow label="Lr1" cond="hBRANDFAMILIARITY.r1">
+      <loopvar name="BrandName">${APIBrands.r1.c1}</loopvar>
+      <loopvar name="BrandLogo">${APIBrandsURLs.r1.c1}</loopvar>
+    </looprow>
+
+    <looprow label="Lr2" cond="hBRANDFAMILIARITY.r2">
+      <loopvar name="BrandName">${APIBrands.r2.c1}</loopvar>
+      <loopvar name="BrandLogo">${APIBrandsURLs.r2.c1}</loopvar>
+    </looprow>
+
+    <looprow label="Lr3" cond="hBRANDFAMILIARITY.r3">
+      <loopvar name="BrandName">${APIBrands.r3.c1}</loopvar>
+      <loopvar name="BrandLogo">${APIBrandsURLs.r3.c1}</loopvar>
+    </looprow>
+
+    <looprow label="Lr4" cond="hBRANDFAMILIARITY.r4">
+      <loopvar name="BrandName">${APIBrands.r4.c1}</loopvar>
+      <loopvar name="BrandLogo">${APIBrandsURLs.r4.c1}</loopvar>
+    </looprow>
+
+    <looprow label="Lr5" cond="hBRANDFAMILIARITY.r5">
+      <loopvar name="BrandName">${APIBrands.r5.c1}</loopvar>
+      <loopvar name="BrandLogo">${APIBrandsURLs.r5.c1}</loopvar>
+    </looprow>
+
+    <looprow label="Lr6" cond="hBRANDFAMILIARITY.r6">
+      <loopvar name="BrandName">${APIBrands.r6.c1}</loopvar>
+      <loopvar name="BrandLogo">${APIBrandsURLs.r6.c1}</loopvar>
+    </looprow>
+
+    <looprow label="Lr7" cond="hBRANDFAMILIARITY.r7">
+      <loopvar name="BrandName">${APIBrands.r7.c1}</loopvar>
+      <loopvar name="BrandLogo">${APIBrandsURLs.r7.c1}</loopvar>
+    </looprow>
+
+    <looprow label="Lr8" cond="hBRANDFAMILIARITY.r8">
+      <loopvar name="BrandName">${APIBrands.r8.c1}</loopvar>
+      <loopvar name="BrandLogo">${APIBrandsURLs.r8.c1}</loopvar>
+    </looprow>
+
+    <looprow label="Lr9" cond="hBRANDFAMILIARITY.r9">
+      <loopvar name="BrandName">${APIBrands.r9.c1}</loopvar>
+      <loopvar name="BrandLogo">${APIBrandsURLs.r9.c1}</loopvar>
+    </looprow>
+
+    <looprow label="Lr10" cond="hBRANDFAMILIARITY.r10">
+      <loopvar name="BrandName">${APIBrands.r10.c1}</loopvar>
+      <loopvar name="BrandLogo">${APIBrandsURLs.r10.c1}</loopvar>
+    </looprow>
+
+    <looprow label="Lr11" cond="hBRANDFAMILIARITY.r11">
+      <loopvar name="BrandName">${APIBrands.r11.c1}</loopvar>
+      <loopvar name="BrandLogo">${APIBrandsURLs.r11.c1}</loopvar>
+    </looprow>
+
+    <looprow label="Lr12" cond="hBRANDFAMILIARITY.r12">
+      <loopvar name="BrandName">${APIBrands.r12.c1}</loopvar>
+      <loopvar name="BrandLogo">${APIBrandsURLs.r12.c1}</loopvar>
+    </looprow>
+  </loop>
+
+  <suspend/>
