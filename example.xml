@@ -1,8 +1,8 @@
  <loop label="LoopREGARDMEANINGUNIQUE" vars="BrandName,BrandLogo">
-    <title>bc_BRANDEVALUATION_REGARDMEANINGUNIQUE</title>
+    <title>brandEvaluation</title>
     <block label="blockREGARDMEANINGUNIQUE" builder:title="default REGARDMEANINGUNIQUE block">
       <radio 
-     label="bc_BRANDEVALUATION_REGARDMEANINGUNIQUE_[loopvar: label]"
+     label="brandEvaluation_[loopvar: label]"
      atmtable:btn_css="font-size:12px; border-radius: 10px; border: 0px solid #888;"
      atmtable:btn_selected_css="border-color: #f80 !important"
      atmtable:col_legend_css="display:none"
@@ -44,9 +44,9 @@ if (device == 0)
     jQuery("tr").removeClass("odd");      
 }
 ]]></style>
-        <row label="r1"><span class="labelr1" style="white-space:nowrap">How highly you<strong> regard</strong> it</span></row>
-        <row label="r2"><span class="labelr2" style="white-space:nowrap">How <strong>meaningful</strong> it is</span></row>
-        <row label="r3"><span class="labelr3" style="white-space:nowrap">How <strong>unique</strong> it is</span></row>
+        <row label="_regard"><span class="labelr1" style="white-space:nowrap">How highly you<strong> regard</strong> it</span></row>
+        <row label="_meaningful"><span class="labelr2" style="white-space:nowrap">How <strong>meaningful</strong> it is</span></row>
+        <row label="_uniqueness"><span class="labelr3" style="white-space:nowrap">How <strong>unique</strong> it is</span></row>
         <col label="c1">1<br /><span class="labelrxcx labelr1c1">extremely low regard</span><span class="labelrxcx labelr2c1">not at all meaningful</span><span class="labelrxcx labelr3c1">not at all different or unique</span></col>
         <col label="c2">2</col>
         <col label="c3">3</col>
@@ -57,62 +57,62 @@ if (device == 0)
       </radio>
     </block>
 
-    <looprow label="Lr1" cond="hBRANDFAMILIARITY.r1">
+    <looprow label="1" cond="hBRANDFAMILIARITY.r1">
       <loopvar name="BrandName">${APIBrands.r1.c1}</loopvar>
       <loopvar name="BrandLogo">${APIBrandsURLs.r1.c1}</loopvar>
     </looprow>
 
-    <looprow label="Lr2" cond="hBRANDFAMILIARITY.r2">
+    <looprow label="2" cond="hBRANDFAMILIARITY.r2">
       <loopvar name="BrandName">${APIBrands.r2.c1}</loopvar>
       <loopvar name="BrandLogo">${APIBrandsURLs.r2.c1}</loopvar>
     </looprow>
 
-    <looprow label="Lr3" cond="hBRANDFAMILIARITY.r3">
+    <looprow label="3" cond="hBRANDFAMILIARITY.r3">
       <loopvar name="BrandName">${APIBrands.r3.c1}</loopvar>
       <loopvar name="BrandLogo">${APIBrandsURLs.r3.c1}</loopvar>
     </looprow>
 
-    <looprow label="Lr4" cond="hBRANDFAMILIARITY.r4">
+    <looprow label="4" cond="hBRANDFAMILIARITY.r4">
       <loopvar name="BrandName">${APIBrands.r4.c1}</loopvar>
       <loopvar name="BrandLogo">${APIBrandsURLs.r4.c1}</loopvar>
     </looprow>
 
-    <looprow label="Lr5" cond="hBRANDFAMILIARITY.r5">
+    <looprow label="5" cond="hBRANDFAMILIARITY.r5">
       <loopvar name="BrandName">${APIBrands.r5.c1}</loopvar>
       <loopvar name="BrandLogo">${APIBrandsURLs.r5.c1}</loopvar>
     </looprow>
 
-    <looprow label="Lr6" cond="hBRANDFAMILIARITY.r6">
+    <looprow label="6" cond="hBRANDFAMILIARITY.r6">
       <loopvar name="BrandName">${APIBrands.r6.c1}</loopvar>
       <loopvar name="BrandLogo">${APIBrandsURLs.r6.c1}</loopvar>
     </looprow>
 
-    <looprow label="Lr7" cond="hBRANDFAMILIARITY.r7">
+    <looprow label="7" cond="hBRANDFAMILIARITY.r7">
       <loopvar name="BrandName">${APIBrands.r7.c1}</loopvar>
       <loopvar name="BrandLogo">${APIBrandsURLs.r7.c1}</loopvar>
     </looprow>
 
-    <looprow label="Lr8" cond="hBRANDFAMILIARITY.r8">
+    <looprow label="8" cond="hBRANDFAMILIARITY.r8">
       <loopvar name="BrandName">${APIBrands.r8.c1}</loopvar>
       <loopvar name="BrandLogo">${APIBrandsURLs.r8.c1}</loopvar>
     </looprow>
 
-    <looprow label="Lr9" cond="hBRANDFAMILIARITY.r9">
+    <looprow label="9" cond="hBRANDFAMILIARITY.r9">
       <loopvar name="BrandName">${APIBrands.r9.c1}</loopvar>
       <loopvar name="BrandLogo">${APIBrandsURLs.r9.c1}</loopvar>
     </looprow>
 
-    <looprow label="Lr10" cond="hBRANDFAMILIARITY.r10">
+    <looprow label="10" cond="hBRANDFAMILIARITY.r10">
       <loopvar name="BrandName">${APIBrands.r10.c1}</loopvar>
       <loopvar name="BrandLogo">${APIBrandsURLs.r10.c1}</loopvar>
     </looprow>
 
-    <looprow label="Lr11" cond="hBRANDFAMILIARITY.r11">
+    <looprow label="11" cond="hBRANDFAMILIARITY.r11">
       <loopvar name="BrandName">${APIBrands.r11.c1}</loopvar>
       <loopvar name="BrandLogo">${APIBrandsURLs.r11.c1}</loopvar>
     </looprow>
 
-    <looprow label="Lr12" cond="hBRANDFAMILIARITY.r12">
+    <looprow label="12" cond="hBRANDFAMILIARITY.r12">
       <loopvar name="BrandName">${APIBrands.r12.c1}</loopvar>
       <loopvar name="BrandLogo">${APIBrandsURLs.r12.c1}</loopvar>
     </looprow>
